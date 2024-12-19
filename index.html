@@ -63,8 +63,9 @@
                     throw new Error(`Error: ${response.statusText}`);
                 }
 
-                const result = await response.json(); // hent json fra backend
-                displayResults(result);
+                const result = await response.json();
+                displayResults(result.result); // Access `result` key from backend response
+
             } catch (error) {
                 resultsDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;
             }
